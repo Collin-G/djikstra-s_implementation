@@ -38,6 +38,18 @@ int main(){
 
         }
 
+        else if (cmd == "PATH"){
+            std::cin>>a;
+            std::cin>>b;
+            graph->path(a,b);
+        }
+
+        else if (cmd == "LOWEST"){
+            std::cin>>a;
+            std::cin>>b;
+            graph->lowest(a,b);
+        }
+
        
     }
     delete graph;
