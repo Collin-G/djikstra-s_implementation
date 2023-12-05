@@ -52,10 +52,7 @@ std::string vertex_list::add(int b,double d, double s, double A){
             last = last->get_next();
         }
         return "success";
-    // }
-    // else{
-    //     return "failure";
-    // }
+    
 }
 
 void vertex_list::remove(Node * node){
@@ -97,9 +94,9 @@ void vertex_list::prt(){
     if (empty == false){
         std::cout<<std::endl;
     }
-    else{
-        std::cout<<" "<<std::endl;
-    }  
+    // else{
+    //     std::cout<<std::endl;
+    // }  
 }
 
 std::string vertex_list::update_traffic(int b, double A){

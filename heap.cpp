@@ -12,24 +12,17 @@ Heap::Heap(vertex_list ** vertices){
     heap = new int[500001];
     size = 0;
     for (int i = 0; i < 500001; ++i){
-        // heap[i] = nullptr;
-        // cost_list[i];
         if(vertices[i]){
             cost_list[i] = INT_MAX;
-            // heap[size] = i;
-            // ++size; 
-            // HeapNode * heapnode = new HeapNode(i, -1);
-            // heap[count] = heapnode;
+         
         }
     }
-   
-   
-    // size = 0;
-    // return heap;
 }
 
 Heap::~Heap(){
     delete [] heap;
+    delete [] prev;
+    delete [] cost_list;
     }
 
 

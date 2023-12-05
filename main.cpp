@@ -20,7 +20,7 @@ int main(){
                 std::cin>>b;
                 std::cin>>d;
                 std::cin>>s;
-                if (a>0 && a < 500001 && b > 0 && b< 500001){
+                if (a>0 && a < 500001 && b > 0 && b< 500001 && d > 0 && s > 0){
                      std::cout<<graph->insert(a,b,d,s)<<std::endl;
                 }
                 else{
@@ -69,26 +69,69 @@ int main(){
         }
 
         else if (cmd == "TRAFFIC"){
-            std::cin>>a;
-            std::cin>>b;
-            std::cin>>A;
-            graph->update_traffic(a,b,A);
+             try{
+
+                std::cin>>a;
+                std::cin>>b;
+                std::cin>>A;
+                if (a>0 && a < 500001 && b > 0 && b< 500001 && A >0){
+                    graph->update_traffic(a,b,A);
+                }
+                else{
+                    illegal_exception ex;
+                    throw ex;
+                   }
+                
+            }
+            catch(std::exception &e){
+                std::cout<<"illegal argument"<<std::endl;
+            }
 
         }
 
         else if (cmd == "PATH"){
-            std::cin>>a;
-            std::cin>>b;
-            graph->path(a,b);
+            try{
+
+                std::cin>>a;
+                std::cin>>b;
+                
+                if (a>0 && a < 500001 && b > 0 && b< 500001){
+                     graph->path(a,b);
+                }
+                else{
+                    illegal_exception ex;
+                    throw ex;
+                   }
+                
+            }
+            catch(std::exception &e){
+                std::cout<<"illegal argument"<<std::endl;
+            }
+            
+            
         }
 
         else if (cmd == "LOWEST"){
-            std::cin>>a;
-            std::cin>>b;
-            graph->lowest(a,b);
-        }
+             try{
 
-       
+                std::cin>>a;
+                std::cin>>b;
+                
+                if (a>0 && a < 500001 && b > 0 && b< 500001){
+                     graph->lowest(a,b);
+                }
+                else{
+                    illegal_exception ex;
+                    throw ex;
+                   }
+                
+            }
+            catch(std::exception &e){
+                std::cout<<"illegal argument"<<std::endl;
+            }
+        }
+     else if (cmd == "END"){break;}
     }
+   
     delete graph;
 }
